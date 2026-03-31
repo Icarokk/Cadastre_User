@@ -23,11 +23,21 @@ jobs:
 
       # 📦 Instalar dependências BACKEND
       - name: Instalar dependências (back)
-        run: |
-          cd back
-          npm install
+        working-directory: back
+        run: npm install
 
-      # ▶️ Rodar servidor
-      - name: run teste
-        run: run teste
-        
+      # ▶️ Rodar servidor em background
+      - name: Iniciar aplicação
+        working-directory: back
+        run: |
+          nohup node src/app.js > server.log 2>&1 &
+          sleep 5
+
+      # 🔍 Ver logs (DEBUG - opcional)
+      - name: Ver logs do servidor
+        working-directory: back
+        run: cat server.log
+
+      # 🌐 Testar API
+      - name: Testar rota principal
+        run: curl --fail http://localhost:3000
