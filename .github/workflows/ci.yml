@@ -28,12 +28,6 @@ jobs:
           npm install
 
       # ▶️ Rodar servidor
-      - name: Iniciar aplicação
-        run: |
-          cd back
-          node src/app.js &
-          sleep 5
-
-      # 🌐 Testar API
-      - name: Testar rota principal
-        run: curl http://localhost:3000
+      - name: run teste
+        run: run teste
+        
