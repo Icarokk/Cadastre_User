@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f3f3f7;
+}
+
+.container {
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 80px;
+  height: 100vh;
+  background: linear-gradient(180deg, #7b4dff, #7c4dff75);
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.sidebar.open {
+  width: 220px;
+}
+
+.menu-btn {
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  gap: 10px;
+  margin: 10px
+}
+
+.menu-btn span {
+  display: none;
+}
+
+.sidebar.open .menu-btn span {
+  display: inline;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  color: rgb(149, 4, 247);
+  text-decoration: none;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.226);
+}
+
+nav p {
+  display: none;
+}
+
+.sidebar.open nav p {
+  display: block;
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+.breadcrumb {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.breadcrumb span {
+  color: #7b4dff;
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  color: #7b4dff;
+  margin-bottom: 20px;
+}
+
+/* FORM */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #444;
+}
+
+input, select {
+  padding: 10px;
+  border: 2px solid #7b4dff;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 0 0 5px rgba(123,77,255,0.5);
+}
+
+/* GRID */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+/* BUTTONS */
+.actions {
+  margin-top: 15px;
+}
+
+a {
+  color: #6a3df0;
+}
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.save {
+  background: #4CAF50;
+}
+
+.cancel {
+  background: #E53935;
+}
+
+.btn.save:hover{
+  background: rgba(124, 24, 255, 0.986);
+}
+.btn.cancel:hover{
+  background: rgba(124, 24, 255, 0.986);
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark {
+  background: #1e1e2f;
+  color: #e0e0e0;
+}
+
+body.dark .sidebar {
+  background: linear-gradient(180deg, #7b4dff, #7c4dff75);
+}
+
+body.dark .content {
+  background: #1e1e2f;
+}
+
+body.dark .card {
+  background: #2a2a40;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+body.dark label {
+  color: #ccc;
+}
+
+body.dark input,
+body.dark select {
+  background: #1c1c2e;
+  color: #fff;
+  border: 2px solid #555;
+}
+
+body.dark input:focus {
+  box-shadow: 0 0 5px rgba(255,255,255,0.2);
+}
+
+body.dark .breadcrumb {
+  color: #aaa;
+}
+
+body.dark a {
+  color: #9a7dff;
+}
+
+body.dark .btn.noturno{
+  color: rgb(255, 255, 255);
+  background-color: #772cf9;
+}
+
+body.dark .save {
+  background: #2e7d32;
+}
+
+body.dark .cancel {
+  background: #c62828;
+}
+
+.btn-noturno {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #7b4dff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.btn-noturno {
+  transform: scale(1.1);
+  background: #6a3df0;
+}

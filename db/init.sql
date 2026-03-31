@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    sobrenome VARCHAR(100) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    sexo VARCHAR(20) NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    numero VARCHAR(10) NOT NULL,
+    bairro VARCHAR(100) NOT NULL,
+    cidade VARCHAR(100) NOT NULL,
+    uf CHAR(2) NOT NULL,
+    cep VARCHAR(10) NOT NULL,
+    cpf VARCHAR(14) NOT NULL UNIQUE
+);

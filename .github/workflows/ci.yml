@@ -1,0 +1,39 @@
+name: 🚀 CI/CD DevOps Project
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 📥 Clonar repositório
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      # 🟢 Configurar Node
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 📦 Instalar dependências BACKEND
+      - name: Instalar dependências (back)
+        run: |
+          cd back
+          npm install
+
+      # ▶️ Rodar servidor
+      - name: Iniciar aplicação
+        run: |
+          cd back
+          node src/app.js &
+          sleep 5
+
+      # 🌐 Testar API
+      - name: Testar rota principal
+        run: curl http://localhost:3000
